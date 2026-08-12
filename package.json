@@ -1,0 +1,8 @@
+{
+  "name": "ale-q10419-windows-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node verification/verify.mjs"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 186,
+  "violations": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_row_count": 19,
+  "task_spec_column_count": 2,
+  "task_asset_id": "node_dependency_release_disposition",
+  "task_asset_id_valid": true,
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/reports/dependency_inventory.csv",
+    "output/reports/license_findings.csv",
+    "output/reports/release_decision.json",
+    "output/reports/vulnerability_gate.csv",
+    "output/src/audit_release_deps.mjs"
+  ],
+  "reference_paths": [
+    "output/reports/dependency_inventory.csv",
+    "output/reports/license_findings.csv",
+    "output/reports/release_decision.json",
+    "output/reports/vulnerability_gate.csv",
+    "output/src/audit_release_deps.mjs"
+  ],
+  "business_inputs": [
+    "input_data/package-lock.json",
+    "input_data/owners.csv",
+    "input_data/rules/license_policy.json",
+    "input_data/security/vulnerability_feed.json"
+  ],
+  "business_inputs_present": true,
+  "humanizer_score": 47,
+  "candidate_score_answer_leak_hits": 0,
+  "online_ai_detector_used_as_conclusion": false
+}

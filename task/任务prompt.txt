@@ -1,0 +1,16 @@
+search-admin-console准备进入发布窗口，供应链复核却发现传递依赖中的许可证和漏洞例外没有统一归档。发布工程团队只能使用离线材料，不能访问npm registry、漏洞服务或发布平台。请补全Node.js程序，让发布负责人、开源合规人员和安全运营能从同一组报告决定本次版本是否放行。
+
+输入位于input_data。package-lock.json记录待审依赖图；rules/license_policy.json定义许可证别名、许可分层、报告日期和漏洞门禁；security/vulnerability_feed.json提供离线漏洞摘要；owners.csv规定精确包名和作用域归属；starter/audit_release_deps.mjs是待完成文件。README.md说明入口和材料用途。
+
+把完成版保存为output/src/audit_release_deps.mjs，在input_data目录运行node tools/run_task.mjs。程序从package-lock v3的packages遍历依赖，排除根项目，保留包名、版本、lockfile路径、父依赖和direct状态。owner先匹配精确包名，再匹配以*结尾的作用域前缀；仍未命中的传递依赖继承父依赖owner。
+
+许可证先按license_aliases归一，再依据allowed_licenses、review_licenses和prohibited_licenses裁决，未知许可证按禁止处理。漏洞用package_name与affected_version连接依赖，例外状态只由policy.report_date和exception_expires_on计算。vulnerability_gate中的block_always始终阻断，allow_with_active_exception仅在例外有效时放行。
+
+交付以下文件：
+output/src/audit_release_deps.mjs
+output/reports/dependency_inventory.csv
+output/reports/license_findings.csv
+output/reports/vulnerability_gate.csv
+output/reports/release_decision.json
+
+dependency_inventory.csv供各责任团队确认依赖来源和owner，license_findings.csv供开源合规复核，vulnerability_gate.csv供安全运营处理漏洞与例外，release_decision.json供发布负责人查看结论、阻断项和提醒项。报告按各自业务主键稳定排序，结论和责任归属必须能够回到依赖、策略与漏洞摘要。正式处理全程离线，使用策略日期，不读取系统当前日期。

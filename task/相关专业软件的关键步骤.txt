@@ -1,0 +1,8 @@
+1. 在Node.js中读取package-lock.json、owners.csv、license_policy.json和vulnerability_feed.json，确认lockfileVersion为3且根package存在
+2. 从根dependencies建立遍历队列，用packages中的node_modules路径解析包名、版本、父依赖和direct状态
+3. 按精确包名、作用域前缀和父owner继承的顺序解析owner_team
+4. 使用license_aliases归一许可证，再按allowed、review、prohibited和未知许可证策略生成许可状态
+5. 按package_name与affected_version连接离线漏洞，用report_date和exception_expires_on计算例外状态
+6. 根据各严重度的vulnerability_gate生成漏洞动作，并与许可证处置归并依赖的最终动作
+7. 从依赖动作汇总release_decision的result、blockers和warnings，为每项保留原因、advisory_id和owner_team
+8. 使用Node.js写出三份CSV和发布裁决JSON，按业务主键检查依赖、许可证、漏洞与责任归属能够互相连接

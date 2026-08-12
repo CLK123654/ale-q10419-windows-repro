@@ -1,0 +1,5 @@
+# search-admin-console依赖许可证与漏洞发布裁决
+
+本仓库保存任务正文、四个附件和Windows工程核对程序。候选人材料位于task与artifacts，工程核对只在GitHub托管的windows-2025环境运行。
+
+工作流使用Node.js24完成离线依赖审计，在两个含中文和空格的临时目录处理材料，同时覆盖CRLF输入、策略日期变化和无效输入。成功记录保留在Actions运行历史，证据下载并核对后删除远端artifact。
