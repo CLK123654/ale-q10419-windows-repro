@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "task_id": "10419",
+  "change_scope": "score_environment_text_only_change",
+  "result": "PASS",
+  "score": {
+    "total_declared": 100,
+    "item_count": 6,
+    "items": [
+      {
+        "name": "交付结构与Node.js入口",
+        "points": 10
+      },
+      {
+        "name": "lockfile依赖图",
+        "points": 20
+      },
+      {
+        "name": "owner归属",
+        "points": 15
+      },
+      {
+        "name": "许可证归一与处置",
+        "points": 18
+      },
+      {
+        "name": "漏洞例外与门禁动作",
+        "points": 22
+      },
+      {
+        "name": "发布裁决与跨报告追溯",
+        "points": 15
+      }
+    ],
+    "points_sum": 100
+  },
+  "prompt_coverage_review": {
+    "completed": true,
+    "semantic_change_required": false,
+    "conclusion": "Node.js入口、依赖图、owner、许可证处置、漏洞例外和发布裁决均有对应评分项"
+  },
+  "environment_coverage": {
+    "operating_system": true,
+    "primary_software_and_version": true,
+    "code_execution_dependency": true,
+    "cpu": true,
+    "gpu": true,
+    "disk": true,
+    "timeout": true,
+    "license_removed": true
+  },
+  "environment_license_text_present": false,
+  "field_name_count": 17,
+  "ale_csv_column_count": 19,
+  "attachment_sha256_before": {
+    "输入数据包.zip": "055a6ca0e018669f7cfa2e32d1b26c259515006154a335b425673dd7eac6a52d",
+    "reference.zip": "4d04cb0f6e56e45c0c87b2bc2b7e3fff69e012bc651fd27b44b9ef6d6ea61320",
+    "关键标准答案.xlsx": "f18e6e02cc31723a169f24c6efb56e41b31aed38be3f561fd132cea39e4d379d",
+    "任务规格转化.xlsx": "874dd7cea897f5c9e695c0a4426b8ec8447404e387bd560005cf210414526e5c"
+  },
+  "attachment_sha256_after": {
+    "输入数据包.zip": "055a6ca0e018669f7cfa2e32d1b26c259515006154a335b425673dd7eac6a52d",
+    "reference.zip": "4d04cb0f6e56e45c0c87b2bc2b7e3fff69e012bc651fd27b44b9ef6d6ea61320",
+    "关键标准答案.xlsx": "f18e6e02cc31723a169f24c6efb56e41b31aed38be3f561fd132cea39e4d379d",
+    "任务规格转化.xlsx": "874dd7cea897f5c9e695c0a4426b8ec8447404e387bd560005cf210414526e5c"
+  },
+  "attachments_unchanged": true,
+  "windows_rerun_required": false,
+  "lark_called": false,
+  "online_ai_detection_used_as_conclusion": false
+}

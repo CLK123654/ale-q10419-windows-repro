@@ -1,4 +1,7 @@
+总分100分
+
 检查项：交付结构与Node.js入口
+分值：10分
 检查项内容：Prompt声明的程序和业务报告位于对应路径，入口由Node.js完成处理
 标准答案：交付路径以Prompt为准，node tools/run_task.mjs执行后生成可解析的CSV与JSON
 关键字段：Prompt声明的相对路径；入口退出码；CSV表头；JSON根字段
@@ -11,6 +14,7 @@
 所属层级：L8运行验证或可执行行为层
 
 检查项：lockfile依赖图
+分值：20分
 检查项内容：从package-lock v3遍历根依赖和传递依赖，保留路径及父子关系
 标准答案：每个非根packages成员按path唯一出现，direct由根dependencies判断，parent由依赖边确定
 关键字段：dependency_inventory.csv的package_name、version、path、direct、parent
@@ -23,6 +27,7 @@
 所属层级：L5多源关联与字段一致性层
 
 检查项：owner归属
+分值：15分
 检查项内容：依赖按精确、作用域前缀和父依赖继承的顺序分派owner
 标准答案：精确规则优先于通配规则；以*结尾的规则按前缀匹配；其余传递依赖继承父owner
 关键字段：owners.csv的package_pattern、owner_team；dependency_inventory.csv的package_name、parent、owner_team
@@ -35,6 +40,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：许可证归一与处置
+分值：18分
 检查项内容：许可证别名归一后按策略分层，未知许可证采用禁止策略
 标准答案：normalized_license由license_aliases映射或原值确定，license_status来自三个策略集合，finding与状态一致
 关键字段：license_policy.json的license_aliases、allowed_licenses、review_licenses、prohibited_licenses；license_findings.csv
@@ -47,6 +53,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：漏洞例外与门禁动作
+分值：22分
 检查项内容：离线漏洞按包名和版本连接，例外状态由策略日期计算，门禁动作按严重度策略裁决
 标准答案：exception_status根据exception_id、exception_expires_on和report_date确定；gate_action遵循vulnerability_gate
 关键字段：vulnerability_feed.json的package_name、affected_version、severity、exception_id、exception_expires_on；license_policy.json的report_date、vulnerability_gate；vulnerability_gate.csv
@@ -59,6 +66,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：发布裁决与跨报告追溯
+分值：15分
 检查项内容：许可证与漏洞动作归并为发布结论、阻断项和提醒项
 标准答案：存在block时result为BLOCK；无block但存在manual_review或allow_with_exception时为REVIEW；否则为ALLOW
 关键字段：release_decision.json的result、blockers、warnings；三份CSV的package_name、gate_action、finding、advisory_id、owner_team
