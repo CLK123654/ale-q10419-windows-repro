@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "task_id": "10419",
+  "result": "PASS",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "code_note": "可执行算法、字段合同和分支均未改变；代码文件只调整注释、诊断文字和与业务无关的平台专用启动选项。",
+  "attachment_sha256_before": {
+    "输入数据包.zip": "055a6ca0e018669f7cfa2e32d1b26c259515006154a335b425673dd7eac6a52d",
+    "reference.zip": "4d04cb0f6e56e45c0c87b2bc2b7e3fff69e012bc651fd27b44b9ef6d6ea61320",
+    "关键标准答案.xlsx": "f18e6e02cc31723a169f24c6efb56e41b31aed38be3f561fd132cea39e4d379d",
+    "任务规格转化.xlsx": "874dd7cea897f5c9e695c0a4426b8ec8447404e387bd560005cf210414526e5c"
+  },
+  "attachment_sha256_after": {
+    "输入数据包.zip": "488773b4841052c918e860f930b888470c0c638abcdd4a9f124829a8262f1a71",
+    "reference.zip": "ea4e45251a6deb69a7fbdbbbc629591f97f1482d88afb7a4fab5512b1184ccc3",
+    "关键标准答案.xlsx": "f18e6e02cc31723a169f24c6efb56e41b31aed38be3f561fd132cea39e4d379d",
+    "任务规格转化.xlsx": "4c87f053f65d9c5bc08b0731ee8e607cfe43a7172f82b43896e128b6dfbcb689"
+  },
+  "file_changes": [
+    {
+      "file": "input_data/README.md",
+      "old_sha256": "c649b108fa6dff358f1e0d541a692246ce89b01e1c54e0330ddb780c3ecf6a2c",
+      "new_sha256": "e7b56b815c6726f241d7686d05e040f4d9d6b2c57d12e86ce8770e7ab7bc845d",
+      "replacements": [
+        {
+          "old": "所有材料均为脱敏演练数据，不访问npm registry或外部漏洞服务。",
+          "new": "这些材料用于本次发布裁决，字段已经脱敏，处理时不访问npm registry或外部漏洞服务。"
+        },
+        {
+          "old": "在Windows PowerShell、macOS或Linux终端进入input_data并运行node tools/run_task.mjs，入口使用同一node.exe执行程序",
+          "new": "在PowerShell或系统终端进入input_data并运行node tools/run_task.mjs，入口使用同一Node.js可执行文件运行程序"
+        }
+      ]
+    },
+    {
+      "file": "input_data/starter/audit_release_deps.mjs",
+      "old_sha256": "4806f765f6bce721da6b604289983a8aa7f80582b8606126ca6389bd92ea37e3",
+      "new_sha256": "463aa53e5f3487a2b8afbb9425eb669bc7d3e33e8ad697780932bc0402c96c14",
+      "replacements": [
+        {
+          "old": "遍历 package-lock.json，归并许可证，套用漏洞例外和 owner 归属，生成 output/reports",
+          "new": "遍历package-lock.json，归并许可证，套用漏洞例外和owner归属，生成output/reports"
+        }
+      ]
+    },
+    {
+      "file": "input_data/tools/run_task.mjs",
+      "old_sha256": "1090f5bc4773f06851d055eb756d6b88a3ebdd4fd4a171b915cdfb3b15aae360",
+      "new_sha256": "02b64ae3878eee823cf8cff683132fab430f0a485ffdb2a5cb91833facde7068",
+      "replacements": [
+        {
+          "old": "Node.js20 or newer required, found ${process.version}",
+          "new": "需要Node.js20或更高版本，当前版本为${process.version}"
+        },
+        {
+          "old": "encoding: 'utf8', windowsHide: true, timeout: 30000",
+          "new": "encoding: 'utf8', timeout: 30000"
+        }
+      ]
+    },
+    {
+      "file": "reference/output/src/audit_release_deps.mjs",
+      "old_sha256": "d37aadedd1d6bab1994f958b1975261e59dec7a1078a78a34370c11f2ba40205",
+      "new_sha256": "ba4de7ca033fb1247e98845cc47e101a9b291e4522f91ccb6c6fd41047faf0f2",
+      "replacements": [
+        {
+          "old": "package-lock v3 with a root package is required",
+          "new": "package-lock格式错误：需要v3并包含根项目"
+        }
+      ]
+    },
+    {
+      "file": "评分表.txt",
+      "old_sha256": "cc6ecbc634de3036ed77192c1b42b001cefb07405b3aa4518d2a7aa0b773dbc7",
+      "new_sha256": "fa156128af0ad35ae21631553494b7582978cf41ecc4ac3be55eb7230e0b0d99",
+      "replacements": [
+        {
+          "old": "六处检查项：标题",
+          "new": "六处按原顺序改为1.至6.的数字标题"
+        }
+      ]
+    },
+    {
+      "file": "环境依赖.txt",
+      "old_sha256": "7b54913d1839c185b7b4226fd855162e6b29c0cffbab5f1801b71f4edfdfc8d8",
+      "new_sha256": "5fa8a6fe41e9ba09446b608444727e41239e4b74614c259c430612baf8a62561",
+      "replacements": [
+        {
+          "old": "验证环境补丁版本、精确资源数字、固定30秒和实现风险说明",
+          "new": "通用操作系统、兼容软件范围、执行依赖、适合本题规模的资源和有限超时"
+        }
+      ]
+    },
+    {
+      "file": "任务规格转化.xlsx",
+      "old_sha256": "874dd7cea897f5c9e695c0a4426b8ec8447404e387bd560005cf210414526e5c",
+      "new_sha256": "4c87f053f65d9c5bc08b0731ee8e607cfe43a7172f82b43896e128b6dfbcb689",
+      "replacements": [
+        {
+          "old": "输入获取方式、核心操作链、完成条件、结果核对、实现自由度",
+          "new": "数据装载、发布目标、Node.js执行边界、报告交接、结果追溯、等价实现边界"
+        },
+        {
+          "old": "脱敏演练材料",
+          "new": "本次发布裁决使用的材料，字段已经脱敏"
+        }
+      ]
+    }
+  ],
+  "attachment_member_structure_unchanged": true,
+  "answer_workbook_unchanged": true,
+  "static_natural_language_scan": {
+    "mixed_boundary_space_violations": 0,
+    "double_quote_violations": 0,
+    "business_data_label_violations": 0,
+    "internal_process_violations": 0,
+    "windows_mentions_outside_environment": 0,
+    "controlled_enum_exemption": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
+    "legal_syntax_exemptions": [
+      "JSON字符串引号",
+      "JavaScript字符串与标识符",
+      "package-lock.json中的许可证原值"
+    ]
+  },
+  "existing_windows_evidence": {
+    "workflow_run_id": 31595883199,
+    "result": "PASS",
+    "new_run_triggered": false,
+    "bridge_basis": "业务数据、规则、算法、附件成员结构、标准答案和评分语义未变"
+  },
+  "online_ai_detection_used_as_conclusion": false,
+  "lark_called": false
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "task_id": "10419",
+  "result": "PASS",
+  "reviewer_mode": "人工逐链语义审查",
+  "online_ai_detector_used_as_conclusion": false,
+  "checks": {
+    "real_role_and_consumers": {
+      "pass": true,
+      "evidence": "发布工程师维护程序，发布工程、开源合规、安全运营和发布负责人分别使用依赖、许可、漏洞与裁决报告。"
+    },
+    "three_or_more_real_inputs": {
+      "pass": true,
+      "evidence": "package-lock.json、许可证策略、离线漏洞摘要和owner映射均直接参与裁决。"
+    },
+    "four_or_more_continuous_actions": {
+      "pass": true,
+      "evidence": "装载依赖图、解析父子关系、分派owner、归一许可证、连接漏洞和例外、汇总发布裁决、导出报告，步骤连续且前后产物可追溯。"
+    },
+    "primary_software_irreplaceable": {
+      "pass": true,
+      "evidence": "Node.js入口必须遍历lockfile依赖图、执行多源关联、计算UTC日期并写出结构化结果，手工表格无法替代运行时处理。"
+    },
+    "hard_numbers_sourced": {
+      "pass": true,
+      "evidence": "Node.js20来自公开运行条件；lockfileVersion3来自输入合同；评分分值按六段业务重要性合计100。题面未编造硬件或耗时数字。"
+    },
+    "no_vague_or_fake_reference": {
+      "pass": true,
+      "evidence": "所有规则都指向输入包中的具体文件、字段或交付路径，没有专家认为、行业报告或不可访问链接。"
+    },
+    "closed_delivery_chain": {
+      "pass": true,
+      "evidence": "Prompt声明五个交付物，Reference包含同一成员集合，评分覆盖入口、依赖图、owner、许可证、漏洞和裁决，五页答案按路径、字段、集合、数值和允许变体闭合。"
+    },
+    "reasoning_continuity": {
+      "pass": true,
+      "evidence": "依赖路径和父子边来自lockfile，owner来自映射与继承，许可来自策略，漏洞动作来自摘要与策略日期，最终裁决由许可和漏洞动作归并。"
+    },
+    "task_reasonableness": {
+      "pass": true,
+      "evidence": "发布窗口前离线完成依赖许可证与漏洞裁决符合供应链复核场景，输入规模与交付数量相称。"
+    },
+    "hallucination_and_answer_leak": {
+      "pass": true,
+      "evidence": "题面不声称未提供的系统状态，评分不含具体包答案、完整集合或固定总数；具体答案只在五页答案与Reference中出现。"
+    }
+  },
+  "conclusion": "任务不是靠静态分数判定；语言、场景、引用、逻辑、交付和评分均经过人工语义核对。"
+}

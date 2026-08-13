@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "task_id": "10419",
+  "result": "PASS",
+  "new_actions_run_triggered": false,
+  "local_business_entry_executed": false,
+  "existing_success_run": 31595883199,
+  "existing_runner": "windows-2025",
+  "existing_result": "PASS",
+  "checks": {
+    "dependency_locking": "输入自带package-lock.json，任务代码不安装第三方npm包，Node.js版本下限公开为20",
+    "powershell_entry": "README给出PowerShell可用的node tools/run_task.mjs入口，入口使用process.execPath启动完成版程序",
+    "path_portability": "所有业务路径由node:path组合，交付使用相对路径，不含作者绝对路径",
+    "encoding": "文本读取和子进程输出显式使用utf8，CSV和JSON写出由Node.js完成",
+    "line_endings": "评分合同允许CSV使用LF或CRLF，旧成功记录已覆盖CRLF",
+    "chinese_and_space_path": "旧成功记录已在两个含中文和空格的目录通过，当前文字变更未触及路径处理",
+    "input_delivery_closure": "四个业务输入均在输入包，Prompt声明的五个交付成员与Reference逐项一致",
+    "native_windows": "旧成功记录使用原生windows-2025和Node.js24，无WSL、Docker、Bash或Linux容器"
+  },
+  "bridge": {
+    "business_semantics_changed": false,
+    "data_changed": false,
+    "rules_changed": false,
+    "algorithm_changed": false,
+    "answers_changed": false,
+    "score_semantics_changed": false,
+    "only_candidate_wording_and_specification_labels_changed": true
+  },
+  "remote_artifact_count": 0,
+  "retained_success_run_count": 1
+}

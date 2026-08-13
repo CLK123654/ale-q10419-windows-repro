@@ -1,5 +1,7 @@
-任务支持Windows11本机、macOS13或64位Linux。主软件为Node.js20或更高兼容版本，程序需使用fs/promises读取离线材料，以Node.js完成lockfile依赖图遍历、JSON与CSV关联、UTC日期计算和文件写出。静态源码搜索或手工整理表格不能替代运行时处理。
+操作系统： Windows11、macOS或主流64位Linux。
 
-辅助工具为PowerShell或系统终端以及JSON、CSV查看器，不需要第三方npm包。依赖准备阶段可以联网安装Node.js，正式处理不访问npm registry、漏洞数据库或发布平台。输入是脱敏演练材料，不含真实账户、令牌或内部仓库地址。
+主软件为Node.js20或更高兼容版本，程序需使用fs/promises读取离线材料，并完成lockfile依赖图遍历、JSON与CSV关联、UTC日期计算和文件写出。静态源码搜索或手工整理表格不能代替程序运行。
 
-建议使用单核CPU、1GB内存和150MB可写磁盘，GPU无要求。执行账号需读取input_data并写入output，单次入口最长运行30秒。常见风险是作用域包名解析错误、hoisted依赖丢失父关系、通配owner覆盖精确规则、未知许可类型被放行，以及使用系统日期误判例外状态。
+PowerShell或系统终端用于启动入口，常见JSON和CSV工具可用于阅读结果。不需要安装第三方npm包。处理过程只访问输入包中的lockfile、策略、漏洞摘要和归属表，不连接npm registry、漏洞数据库或发布平台。
+
+本题数据量较小，对CPU没有特殊要求，也不需要GPU。磁盘需能容纳Node.js、输入材料、完成版程序和四份报告。执行账户需能读取input_data并写入output。入口应设置有限超时，覆盖本题依赖图处理并避免异常无限等待。
